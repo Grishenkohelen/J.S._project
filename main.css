@@ -1,0 +1,32 @@
+
+.wrap{
+    height:1700px;
+    width:500px;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-size: x-large;
+    border-radius: 10px;
+}
+
+
+.member{
+    width: 240px;
+    height: 300px;
+    box-sizing: border-box;
+    border:2px;
+    background: #7148d9;
+    font-size: xx-large;
+}
+
+
+.button{
+    height:20px;
+    width:100px;
+    background: #beb94d;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
