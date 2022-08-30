@@ -4,7 +4,7 @@ let post = JSON.parse(url.searchParams.get('id'));
 
 let postsDiv = document.getElementsByClassName('post_details')[0];
 
-postsDiv.innerHTML = `<h3>${post.id}</h3>
+postsDiv.innerHTML = `<h3>${post.id}-${post.userId}</h3>
                       <h4>${post.title}</h4>
                       <p>${post.body}</p>`
 
