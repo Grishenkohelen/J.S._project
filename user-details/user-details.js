@@ -1,3 +1,4 @@
+
 let url = new URL(location.href);
 let user = JSON.parse(url.searchParams.get('data'));
 
@@ -39,6 +40,7 @@ let detailBtn = document.createElement('button');
 detailBtn.innerText = 'post of current user';
 
 usersDetails.appendChild(detailBtn)
+detailBtn.classList.add('post_button');
 
 let postsDiv = document.createElement('div');
 postsDiv.classList.add('posts')
@@ -63,7 +65,7 @@ detailBtn.onclick =(id) => {
 
                 postBtn.onclick = () => {
                     console.log(post);
-                    location.href = `./post-details.html?data=${JSON.stringify(post)}`
+                    location.href = `../post-details/post-details.html?id=${JSON.stringify(post)}`
                 }
 
 
@@ -72,4 +74,16 @@ detailBtn.onclick =(id) => {
             detailBtn.disabled = true;
 
         })};
+
+
+
+
+
+
+
+
+
+
+
+
 

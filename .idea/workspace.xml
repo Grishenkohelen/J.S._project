@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0cc1d206-144c-4fc7-9965-0c4565001f84" name="Changes" comment="">
+    <list default="true" id="0cc1d206-144c-4fc7-9965-0c4565001f84" name="Changes" comment="project">
       <change beforePath="$PROJECT_DIR$/../mini_project_j.s/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mini_project_j.s/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/post-details.css" beforeDir="false" afterPath="$PROJECT_DIR$/../mini_project_j.s/user-details/user-details.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/post-details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/post-details.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/user-details.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/user-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mini_project_j.s/user-details/user-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/user-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mini_project_j.s/user-details/user-details.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,6 +19,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../mini_project_j.s" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -29,6 +45,11 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/snang/IdeaProjects/J.S.h.w/mini_project.j.s/post-details.css&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\snang\IdeaProjects\mini_project_j.s\user-details" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -38,8 +59,19 @@
       <option name="presentableId" value="Default" />
       <updated>1661804230269</updated>
       <workItem from="1661804231718" duration="1092000" />
-      <workItem from="1661805589882" duration="1085000" />
+      <workItem from="1661805589882" duration="4477000" />
+      <workItem from="1661810916739" duration="756000" />
+      <workItem from="1661880693615" duration="10215000" />
+      <workItem from="1661891367740" duration="2036000" />
     </task>
+    <task id="LOCAL-00001" summary="project">
+      <created>1661806701419</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661806701420</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -55,5 +87,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="project" />
+    <option name="LAST_COMMIT_MESSAGE" value="project" />
   </component>
 </project>
