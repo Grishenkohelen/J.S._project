@@ -1,0 +1,403 @@
+Index: ../mini_project_j.s/user-details.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../mini_project_j.s/user-details.css b/../mini_project_j.s/user-details/user-details.css
+rename from ../mini_project_j.s/user-details.css
+rename to ../mini_project_j.s/user-details/user-details.css
+--- a/../mini_project_j.s/user-details.css	(revision 65b83d596656709303d8ff3d7e8c073617dff2d2)
++++ b/../mini_project_j.s/user-details/user-details.css	(date 1661885368945)
+@@ -1,21 +1,60 @@
+-.user_details{
++.main1{
++    display: flex;
++    flex-wrap: wrap;
++}
++.user_details {
++    margin-top: 0px;
+     width: 100%;
+     background: #b058c4;
+     display: flex;
+-    flex-direction: column;
+-}
+-.user_details button, .user button, .post_details button {
+     display: block;
+     width: 90%;
+     margin: 5px auto;
+-    background: #2b75d5;
+     padding: 10px;
+-    border-radius: 10px;
+     font-size: 20px;
+ }
++.posts{
++    box-sizing: border-box;
++    padding: 20px;
++    display: flex;
++    flex-wrap: wrap;
++    width: 100%;
++}
++
++.post_title{
++    display: flex;
++    justify-content: inherit;
++    align-items: center;
++    display: flex;
++    align-items: center;
++    width: 200px;
++    height: 100px;
++    margin-bottom: 10px;
++    background: #8736b6;
++}
+ 
++
++.post_button{
++    display: block;
++    width: 90%;
++    border-radius: 2px;
++    background: #beb94d;
++}
+ .button_details{
++    width: 40%;
++    border-radius: 2px;
++    background: #91be4d;
++}
++
++
++
++.post_title button{
+     display: block;
+-    width: 90%;
++    width: 40%;
++    margin: 5px auto;
++    background: #8869d9;
++    padding: 10px;
+     border-radius: 10px;
++    font-size: 10px;
++
+ }
+\ No newline at end of file
+Index: ../mini_project_j.s/user-details.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../mini_project_j.s/user-details.js b/../mini_project_j.s/user-details/user-details.js
+rename from ../mini_project_j.s/user-details.js
+rename to ../mini_project_j.s/user-details/user-details.js
+--- a/../mini_project_j.s/user-details.js	(revision 65b83d596656709303d8ff3d7e8c073617dff2d2)
++++ b/../mini_project_j.s/user-details/user-details.js	(date 1661884548048)
+@@ -39,6 +39,7 @@
+ detailBtn.innerText = 'post of current user';
+ 
+ usersDetails.appendChild(detailBtn)
++detailBtn.classList.add('post_button');
+ 
+ let postsDiv = document.createElement('div');
+ postsDiv.classList.add('posts')
+@@ -63,7 +64,7 @@
+ 
+                 postBtn.onclick = () => {
+                     console.log(post);
+-                    location.href = `./post-details.html?data=${JSON.stringify(post)}`
++                    location.href = `../post-details/post-details.html`
+                 }
+ 
+ 
+Index: ../mini_project_j.s/main.css
+===================================================================
+diff --git a/../mini_project_j.s/main.css b/../mini_project_j.s/main.css
+deleted file mode 100644
+--- a/../mini_project_j.s/main.css	(revision 65b83d596656709303d8ff3d7e8c073617dff2d2)
++++ /dev/null	(revision 65b83d596656709303d8ff3d7e8c073617dff2d2)
+@@ -1,32 +0,0 @@
+-
+-.wrap{
+-    height:1700px;
+-    width:500px;
+-    display:flex;
+-    justify-content: space-between;
+-    flex-wrap: wrap;
+-    flex-direction: column;
+-    font-size: x-large;
+-    border-radius: 10px;
+-}
+-
+-
+-.member{
+-    width: 240px;
+-    height: 300px;
+-    box-sizing: border-box;
+-    border:2px;
+-    background: #7148d9;
+-    font-size: xx-large;
+-}
+-
+-
+-.button{
+-    height:20px;
+-    width:100px;
+-    background: #beb94d;
+-    align-items: center;
+-    display: flex;
+-    justify-content: space-evenly;
+-    border-radius: 10px;
+-}
+Index: ../mini_project_j.s/main.js
+===================================================================
+diff --git a/../mini_project_j.s/main.js b/../mini_project_j.s/main.js
+deleted file mode 100644
+--- a/../mini_project_j.s/main.js	(revision 65b83d596656709303d8ff3d7e8c073617dff2d2)
++++ /dev/null	(revision 65b83d596656709303d8ff3d7e8c073617dff2d2)
+@@ -1,31 +0,0 @@
+-
+-let wrap = document.createElement('div');
+-wrap.classList.add('wrap');
+-document.body.appendChild(wrap);
+-
+-let div = document.getElementsByClassName('wrap')[0];
+-
+-fetch('https://jsonplaceholder.typicode.com/users').then(users => users.json()).then(users => {
+-    for (let user of users) {
+-        let div = document.createElement('div');
+-        div.classList.add('user');
+-        div.innerHTML = `<h5>${user.id} ${user.name}</h5>`
+-        document.body.appendChild(div);
+-        div.classList.add(`member`);
+-
+-        let userDetailsBtn = document.createElement(`button`);
+-        userDetailsBtn.innerText = 'user details';
+-
+-        div.appendChild(userDetailsBtn);
+-        userDetailsBtn.classList.add(`button`);
+-        div.appendChild(userDetailsBtn);
+-        wrap.appendChild(div);
+-
+-        userDetailsBtn.onclick = function () {
+-            location.href = `./user-details.html?data=${JSON.stringify(user)}`
+-            // location.href = `user-details.html`;
+-
+-            userDetailsBtn.appendChild(location);
+-        }
+-    }
+-});
+Index: ../mini_project_j.s/index.html
+===================================================================
+diff --git a/../mini_project_j.s/index.html b/../mini_project_j.s/index.html
+deleted file mode 100644
+--- a/../mini_project_j.s/index.html	(revision 65b83d596656709303d8ff3d7e8c073617dff2d2)
++++ /dev/null	(revision 65b83d596656709303d8ff3d7e8c073617dff2d2)
+@@ -1,17 +0,0 @@
+-<!doctype html>
+-<html lang="en">
+-<head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport"
+-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+-    <title>Document</title>
+-    <link href="main.css" rel="stylesheet">
+-</head>
+-<body>
+-<script src="main.js"></script>
+-
+-
+-
+-</body>
+-</html>
+\ No newline at end of file
+Index: ../mini_project_j.s/post-details.css
+===================================================================
+diff --git a/../mini_project_j.s/post-details.css b/../mini_project_j.s/post-details.css
+deleted file mode 100644
+--- a/../mini_project_j.s/post-details.css	(revision 65b83d596656709303d8ff3d7e8c073617dff2d2)
++++ /dev/null	(revision 65b83d596656709303d8ff3d7e8c073617dff2d2)
+@@ -1,50 +0,0 @@
+-.post_details button {
+-    display: block;
+-    width: 90%;
+-    margin: 5px auto;
+-    padding: 10px;
+-    border-radius: 10px;
+-    font-size: 20px;
+-}
+-
+-.posts{
+-    box-sizing: border-box;
+-    padding: 20px;
+-    display: flex;
+-    flex-wrap: wrap;
+-}
+-.post_title{
+-    display: flex;
+-    align-items: center;
+-    width: 200px;
+-    height: 100px;
+-    margin-bottom: 10px;
+-    background: #8736b6;
+-}
+-.post_title button{
+-    display: block;
+-    width: 40%;
+-    margin: 5px auto;
+-    background: #8869d9;
+-    padding: 10px;
+-    border-radius: 10px;
+-    font-size: 10px;
+-
+-}
+-.post_details{
+-    background: #a41aca;
+-    margin: 10px;
+-}
+-.comments{
+-    margin-left: 200px;
+-    padding: 10px 15px;
+-}
+-.comment{
+-    display: flex;
+-    align-items: center;
+-    width: 200px;
+-    height: 300px;
+-    margin-bottom: 10px;
+-    background: #911db7;
+-}
+-
+Index: ../mini_project_j.s/post-details.js
+===================================================================
+diff --git a/../mini_project_j.s/post-details.js b/../mini_project_j.s/post-details.js
+deleted file mode 100644
+--- a/../mini_project_j.s/post-details.js	(revision 65b83d596656709303d8ff3d7e8c073617dff2d2)
++++ /dev/null	(revision 65b83d596656709303d8ff3d7e8c073617dff2d2)
+@@ -1,34 +0,0 @@
+-
+-let url = new URL(location.href);
+-let post = JSON.parse(url.searchParams.get('data'));
+-
+-let postsDiv = document.getElementsByClassName('post_details')[0];
+-
+-postsDiv.innerHTML = `<h3>${post.id} - ${post.userId}</h3>
+-                      <h4>${post.title}</h4>
+-                      <p>${post.body}</p>`
+-
+-
+-let commentsBtn = document.createElement('button');
+-commentsBtn.innerText = 'Show comments'
+-postsDiv.appendChild(commentsBtn)
+-
+-
+-let commentsDiv = document.createElement('div');
+-commentsDiv.classList.add('comments');
+-document.body.appendChild(commentsDiv);
+-
+-commentsBtn.onclick = (id) => {
+-    fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`)
+-        .then(value => value.json())
+-        .then(comments => {
+-            for (let comment of comments) {
+-                let commentDiv = document.createElement('div');
+-                commentDiv.classList.add('comment')
+-                commentDiv.innerText = comment.body;
+-
+-                commentsDiv.appendChild(commentDiv);
+-            }
+-            commentsBtn.disabled = true;
+-        })
+-};
+Index: ../mini_project_j.s/post-details.html
+===================================================================
+diff --git a/../mini_project_j.s/post-details.html b/../mini_project_j.s/post-details.html
+deleted file mode 100644
+--- a/../mini_project_j.s/post-details.html	(revision 65b83d596656709303d8ff3d7e8c073617dff2d2)
++++ /dev/null	(revision 65b83d596656709303d8ff3d7e8c073617dff2d2)
+@@ -1,15 +0,0 @@
+-<!doctype html>
+-<html lang="en">
+-<head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport"
+-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+-    <link rel="stylesheet" href="post-details.css.css">
+-    <title>Post details</title>
+-</head>
+-<body>
+-<div class="post_details"></div>
+-<script src="post-details.js"></script>
+-</body>
+-</html>
+\ No newline at end of file
+Index: ../mini_project_j.s/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"0cc1d206-144c-4fc7-9965-0c4565001f84\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/../mini_project_j.s/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../mini_project_j.s/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/../mini_project_j.s\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2E2qs1Nvo2fvgqTBZj0kfehTdo3\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/snang/IdeaProjects/J.S.h.w/mini_project.j.s/post-details.css&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"0cc1d206-144c-4fc7-9965-0c4565001f84\" name=\"Changes\" comment=\"\" />\r\n      <created>1661804230269</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1661804230269</updated>\r\n      <workItem from=\"1661804231718\" duration=\"1092000\" />\r\n      <workItem from=\"1661805589882\" duration=\"1085000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../mini_project_j.s/.idea/workspace.xml b/../mini_project_j.s/.idea/workspace.xml
+--- a/../mini_project_j.s/.idea/workspace.xml	(revision 65b83d596656709303d8ff3d7e8c073617dff2d2)
++++ b/../mini_project_j.s/.idea/workspace.xml	(date 1661885284345)
+@@ -1,8 +1,17 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="0cc1d206-144c-4fc7-9965-0c4565001f84" name="Changes" comment="">
++    <list default="true" id="0cc1d206-144c-4fc7-9965-0c4565001f84" name="Changes" comment="project">
+       <change beforePath="$PROJECT_DIR$/../mini_project_j.s/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mini_project_j.s/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/index.html" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/main.css" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/main.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/post-details.css" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/post-details.html" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/post-details.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/user-details.css" beforeDir="false" afterPath="$PROJECT_DIR$/../mini_project_j.s/user-details/user-details.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/user-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mini_project_j.s/user-details/user-details.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../mini_project_j.s/user-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mini_project_j.s/user-details/user-details.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -29,6 +38,11 @@
+     &quot;last_opened_file_path&quot;: &quot;C:/Users/snang/IdeaProjects/J.S.h.w/mini_project.j.s/post-details.css&quot;
+   }
+ }</component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\snang\IdeaProjects\mini_project_j.s\user-details" />
++    </key>
++  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -38,8 +52,18 @@
+       <option name="presentableId" value="Default" />
+       <updated>1661804230269</updated>
+       <workItem from="1661804231718" duration="1092000" />
+-      <workItem from="1661805589882" duration="1085000" />
++      <workItem from="1661805589882" duration="4477000" />
++      <workItem from="1661810916739" duration="756000" />
++      <workItem from="1661880693615" duration="4299000" />
+     </task>
++    <task id="LOCAL-00001" summary="project">
++      <created>1661806701419</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1661806701420</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -56,4 +80,8 @@
+       </map>
+     </option>
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="project" />
++    <option name="LAST_COMMIT_MESSAGE" value="project" />
++  </component>
+ </project>
+\ No newline at end of file
+diff --git a/../mini_project_j.s/user-details.html b/../mini_project_j.s/user-details/user-details.html
+rename from ../mini_project_j.s/user-details.html
+rename to ../mini_project_j.s/user-details/user-details.html

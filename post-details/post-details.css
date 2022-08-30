@@ -1,0 +1,19 @@
+
+
+.post_details{
+    background: #a41aca;
+    margin: 10px;
+}
+.comments{
+    margin-left: 200px;
+    padding: 10px 15px;
+}
+.comment{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 300px;
+    margin-bottom: 10px;
+    background: #911db7;
+}
+
