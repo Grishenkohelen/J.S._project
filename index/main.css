@@ -1,7 +1,7 @@
 
 .wrap{
     height:1700px;
-    width:500px;
+    width:1200px;
     display:flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -13,18 +13,20 @@
 
 
 .member{
-    width: 240px;
+    width: 550px;
     height: 300px;
     box-sizing: border-box;
     border:2px;
     background: #7148d9;
     font-size: xx-large;
+    padding-left: 50px;
+
 }
 
 
 .button{
-    height:20px;
-    width:100px;
+    height:50px;
+    width:300px;
     background: #beb94d;
     justify-content: space-evenly;
     border-radius: 10px;

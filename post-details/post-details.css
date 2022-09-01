@@ -1,19 +1,24 @@
 
 
 .post_details{
-    background: #a41aca;
+    background: #866ace;
     margin: 10px;
+
 }
 .comments{
     margin-left: 200px;
     padding: 10px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
 }
 .comment{
-    display: flex;
-    align-items: center;
-    width: 200px;
-    height: 300px;
+    /*display: flex;*/
+    /*align-items: center;*/
+    width: 175px;
+    height: 220px;
     margin-bottom: 10px;
-    background: #911db7;
+    background: #0090fe;
 }
 
